@@ -88,6 +88,14 @@ public class Doom3BFGWeaponModder implements ActionListener {
 		
 		if (e.getActionCommand().equals("mod")) {
 			
+			new File(Doom3BFGDirectory + "base\\def").mkdir();
+			if(!new File(Doom3BFGDirectory + "base\\def").exists() )
+				throw new RuntimeException("Could not create directory def");
+			
+			new File(Doom3BFGDirectory + "base\\script").mkdir();
+			if(!new File(Doom3BFGDirectory + "base\\script").exists() )
+				throw new RuntimeException("Could not create directory script");
+
 			tableValues = new HashMap<>(); 
 			
 			int rowCount = easyTable.getRowCount();
